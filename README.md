@@ -1,6 +1,27 @@
-# q-developer-demonstration
+# Todo Application with Lambda Functions
 
-This is a React application scaffolded using Vite. Below are the instructions for setting up and running the project.
+This is a React/TypeScript Todo application that demonstrates serverless architecture patterns using a **create_task lambda function**. The application is built with Vite and showcases how to implement AWS Lambda-style functions within a frontend application.
+
+## Features
+
+- ✅ **Create Task Lambda Function**: Serverless-style task creation with proper validation
+- ✅ **TypeScript Support**: Full type safety with comprehensive interfaces
+- ✅ **Error Handling**: Robust error handling and user feedback
+- ✅ **Task Management**: Create, complete, and delete tasks
+- ✅ **Responsive Design**: Mobile-friendly interface
+- ✅ **Lambda Testing**: Comprehensive test suite for lambda functions
+
+## Lambda Function Implementation
+
+The application features a `create_task` lambda function that:
+
+- Follows AWS Lambda handler patterns (`event`, `context` parameters)
+- Validates input data and handles errors gracefully
+- Generates unique task IDs and timestamps
+- Returns structured responses with success/error information
+- Includes comprehensive logging and request tracking
+
+For detailed documentation about the lambda function, see [LAMBDA_FUNCTION_README.md](./LAMBDA_FUNCTION_README.md).
 
 ## Getting Started
 
@@ -37,7 +58,36 @@ To start the development server, run:
 npm run dev
 ```
 
-Your application will be running at `http://localhost:3000`.
+Your Todo application will be running at `http://localhost:3000`.
+
+## Usage
+
+1. **Create Tasks**: Use the form to create new tasks with title and optional description
+2. **Manage Tasks**: Mark tasks as complete or delete them
+3. **Lambda Function**: Each task creation uses the lambda function with proper validation
+4. **View Details**: See creation and update timestamps for each task
+
+## Testing the Lambda Function
+
+The application includes a comprehensive test suite for the lambda function. You can run tests by importing and executing the test function in the browser console:
+
+```javascript
+import runLambdaTests from './src/lambdaFunctions.test';
+runLambdaTests();
+```
+
+## Project Structure
+
+```
+src/
+├── types.ts                    # TypeScript interfaces and types
+├── lambdaFunctions.ts         # Create task lambda function implementation
+├── lambdaFunctions.test.ts    # Lambda function test suite
+├── TodoApp.tsx               # Main Todo application component
+├── App.tsx                   # Root application component
+├── main.tsx                  # Application entry point
+└── index.css                 # Global styles
+```
 
 ### Building for Production
 
