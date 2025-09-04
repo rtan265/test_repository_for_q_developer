@@ -1,12 +1,8 @@
 import React from 'react';
+import TodoApp from './TodoApp';
 
 const App: React.FC = () => {
-  return (
-    <div>
-      <h1>Welcome to the Q Developer Demonstration</h1>
-      <p>This is a simple React application scaffolded with Vite.</p>
-    </div>
-  );
+  return <TodoApp />;
 };
 
 export default App;
